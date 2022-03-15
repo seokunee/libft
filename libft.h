@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/14 16:25:41 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/15 18:54:25 by seokchoi         ###   ########.fr       */
+/*   Created: 2022/03/15 19:35:50 by seokchoi          #+#    #+#             */
+/*   Updated: 2022/03/15 19:40:18 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, size_t n)
-{
-	size_t			i;
-	unsigned char	*tmp;
+#ifndef LIBFT_H
+# define LIBFT_H
 
-	tmp = s;
-	i = 0;
-	while (i < n)
-	{
-		tmp[i] = 0;
-		i++;
-	}
-	return (tmp);
-}
+#include <unistd.h>
+size_t	ft_strlen(const char *s);
+
+#endif

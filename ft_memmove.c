@@ -6,36 +6,35 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:41:39 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/14 19:20:34 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:58:07 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	size_t			i;
+	size_t			j;
+	unsigned char	*s;
+	unsigned char	*d;
 
 	i = 0;
-	if (n = 0)
-		return (dest);
-	if (!dest || !src)
-		return (NULL);
-	while (src[i] && i < n)
+	s = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (dest < src)
 	{
-		j = 0;
-		while (dest[j] && j < n)
+		while (i < n)
 		{
-			if (&dest[j] == &src[i])
-				return (NULL);
-			j++;
+			d[i] = s[i];
+			i++;
 		}
-		i++;
 	}
-	i = 0;
-	while (src[i] && i < n)
+	else
 	{
-		dest[i] = src[i];
-		i++;
+		while (n)
+		{
+			d[n - 1] = s[n - 1];
+			n--;
+		}
 	}
 	return (dest);
 }

@@ -6,20 +6,25 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:10:10 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/14 17:38:39 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/15 20:24:53 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-
+	size_t			i;
+	unsigned char	*d;
+	unsigned char	*s;
+	
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
 	i = 0;
-	if (!src)
-		return (NULL);
-	while (i < n && src[i])
+	if (dest == NULL && src == NULL)
+		return (0);
+	while (i < n)
 	{
-		dest[i] = src[i];
+		d[i] = s[i];
 		i++;
 	}
+	return (dest);
 }
