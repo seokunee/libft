@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 21:05:59 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/17 18:00:49 by seokchoi         ###   ########.fr       */
+/*   Created: 2022/03/17 15:36:52 by seokchoi          #+#    #+#             */
+/*   Updated: 2022/03/17 17:18:01 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	unsigned char	*p;
-	unsigned char	cc;
-	size_t			i;
+	long	result;
+	long	n;
+	int		i;
 
+	n = 1;
 	i = 0;
-	cc = (unsigned char)c;
-	p = (unsigned char *)s;
-	while (i < n)
+	result = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (p[i] == cc)
-			return ((unsigned char *)s + i);
+		if (nptr[i] == '-')
+			n *= -1;
 		i++;
 	}
-	return (0);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result *= 10;
+		result += nptr[i] - '0';
+		if (result < 0)
+			return ((n + 1) / -2);
+		i++;
+	}
+	return (result * n);
 }

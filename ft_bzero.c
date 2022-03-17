@@ -6,9 +6,11 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:41 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/15 18:54:25 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:35:42 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -22,5 +24,4 @@ void	ft_bzero(void *s, size_t n)
 		tmp[i] = 0;
 		i++;
 	}
-	return (tmp);
 }

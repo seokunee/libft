@@ -6,9 +6,11 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:25:58 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/15 20:23:19 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:35:26 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
