@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seokhun <seokhun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 19:35:50 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/17 20:49:19 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/18 14:49:59 by seokhun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-void	*calloc(size_t number, size_t size);
-char	*strdup(const char *s);
+void	*ft_calloc(size_t number, size_t size);
+char	*ft_strdup(const char *s);
 
 #endif

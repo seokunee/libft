@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seokhun <seokhun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:19:05 by seokhun           #+#    #+#             */
-/*   Updated: 2022/03/17 18:03:06 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:08:51 by seokhun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,22 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
+	size_t	lit_len;
 
 	i = 0;
-	j = 0;
-	if (little[0] == '\0')
+	if (!*little)
 		return ((char *)big);
-	while (big[i])
+	lit_len = ft_strlen(little);
+	while (big[i] && i < len)
 	{
+		j = 0;
 		if (big[i] == little[j])
 		{
 			while (big[i + j] == little[j] && big[i + j] \
-				&& little[j] && j < len)
+				&& little[j] && i + j < len)
 				j++;
-			if (j == len)
+			if (j == lit_len)
 				return ((char *)(big + i));
-			j = 0;
 		}
 		i++;
 	}
