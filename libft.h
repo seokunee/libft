@@ -6,7 +6,7 @@
 /*   By: seokhun <seokhun@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 19:35:50 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/18 14:49:59 by seokhun          ###   ########.fr       */
+/*   Updated: 2022/03/19 21:22:40 by seokhun          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include<unistd.h>
 # include<stdlib.h>
+
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
