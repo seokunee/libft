@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 13:49:00 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/21 22:22:43 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/22 00:54:31 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ char	*ft_itoa(int n)
 		num *= -1;
 	}
 	str[numlen] = '\0';
+	if (num == 0)
+		str[0] = '0';
 	while (num > 0)
 	{
 		str[numlen - 1] = (num % 10) + '0';
@@ -55,4 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
->>>>>>> ceb0d61b147a58ea4cb8860bed52324325934168
