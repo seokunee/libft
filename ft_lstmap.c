@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 21:25:06 by seokhun           #+#    #+#             */
-/*   Updated: 2022/03/23 19:02:01 by seokchoi         ###   ########.fr       */
+/*   Created: 2022/03/23 17:34:51 by seokchoi          #+#    #+#             */
+/*   Updated: 2022/03/23 19:03:18 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
-	size_t	front;
-	size_t	back;
+	t_list	*new;
+	t_list	*tmp;
 
-	front = 0;
-	back = ft_strlen(s1);
-	while (s1[front] && ft_strchr(set, s1[front]))
-		front++;
-	while (s1[back - 1] && ft_strchr(set, s1[back - 1]) && back > front)
-		back--;
-	str = (char *)malloc(sizeof(char) * (back - front + 1));
-	if (!str)
+	if (!lst || !f || !del)
 		return (NULL);
-	else
-		ft_strlcpy(str, &s1[front], back - front + 1);
-	return (str);
+	while (!lst)
+	{
+		new = ft_lstnew(f(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&lst, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&)
+	}
 }

@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 21:25:06 by seokhun           #+#    #+#             */
-/*   Updated: 2022/03/23 19:02:01 by seokchoi         ###   ########.fr       */
+/*   Created: 2022/03/23 14:49:02 by seokchoi          #+#    #+#             */
+/*   Updated: 2022/03/23 15:14:43 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*str;
-	size_t	front;
-	size_t	back;
+	t_list	*tmp;
 
-	front = 0;
-	back = ft_strlen(s1);
-	while (s1[front] && ft_strchr(set, s1[front]))
-		front++;
-	while (s1[back - 1] && ft_strchr(set, s1[back - 1]) && back > front)
-		back--;
-	str = (char *)malloc(sizeof(char) * (back - front + 1));
-	if (!str)
-		return (NULL);
-	else
-		ft_strlcpy(str, &s1[front], back - front + 1);
-	return (str);
+	if (!lst || !del)
+		return ;
+	if (!*list)
+		return ;
+	while (*lst->next)
+	{
+		tmp = *lst;
+		*lst = *lst->next;
+		del(tmp->content);
+		free(tmp);
+	}
+	free(*lst);
+	*lst = NULL;
 }

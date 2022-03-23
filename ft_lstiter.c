@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 21:25:06 by seokhun           #+#    #+#             */
-/*   Updated: 2022/03/23 19:02:01 by seokchoi         ###   ########.fr       */
+/*   Created: 2022/03/23 15:16:28 by seokchoi          #+#    #+#             */
+/*   Updated: 2022/03/23 17:31:16 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*str;
-	size_t	front;
-	size_t	back;
-
-	front = 0;
-	back = ft_strlen(s1);
-	while (s1[front] && ft_strchr(set, s1[front]))
-		front++;
-	while (s1[back - 1] && ft_strchr(set, s1[back - 1]) && back > front)
-		back--;
-	str = (char *)malloc(sizeof(char) * (back - front + 1));
-	if (!str)
-		return (NULL);
-	else
-		ft_strlcpy(str, &s1[front], back - front + 1);
-	return (str);
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst->cotent);
+		lst->next;
+	}
 }
