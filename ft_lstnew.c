@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 01:32:55 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/23 01:34:39 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:49:55 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ t_list	*ft_lstnew(void *content)
 	if (!new)
 		return (NULL);
 	new->content = content;
-	new->new = NULL;
+	new->next = NULL;
 	return (new);
 }

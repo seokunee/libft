@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 01:50:55 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/23 02:02:44 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/24 19:21:42 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
+
 	if (!lst || !new)
 		return ;
 	if (!*lst)
@@ -21,7 +23,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	while (lst->next)
-		lst = lst->next;
-	lst->next = new;
+	tmp = ft_lstlast(*lst);
+	tmp->next = new;
 }
