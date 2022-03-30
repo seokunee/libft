@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:34:51 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/24 19:46:36 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/30 21:15:43 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*list;
+	t_list	*nlist;
 	t_list	*tmp;
 
 	if (lst == NULL || f == NULL || del == NULL)
 		return (NULL);
-	list = NULL;
+	nlist = NULL;
 	while (lst != NULL)
 	{
 		tmp = ft_lstnew(f(lst->content));
 		if (tmp == NULL)
 		{
-			ft_lstclear(&list, del);
+			ft_lstclear(&nlist, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&list, tmp);
+		ft_lstadd_back(&nlist, tmp);
 		tmp = tmp->next;
 		lst = lst->next;
 	}
-	return (list);
+	return (nlist);
 }

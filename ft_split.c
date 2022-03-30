@@ -6,31 +6,33 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 23:22:39 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/23 01:11:06 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:27:40 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_strs(char const *str, char c)
+char	**ft_malloc_arr(char *s, char c)
 {
-	size_t	i;
-	size_t	count;
+	size_t	cnt;
+	char	**arr;
 
-	i = 0;
-	count = 0;
-	while (str[i])
+	cnt = 0;
+	if (!s)
+		return (NULL);
+	while (*s)
 	{
-		if (c != str[i])
+		if (*s != c)
 		{
-			while (str[i] && c != str[i])
-				i++;
-			count++;
+			cnt++;
+			while (*s != c && *s)
+				s++;
 		}
 		else
-			i++;
+			s++;
 	}
-	return (count);
+	arr = (char **)malloc(sizeof(char *) * (cnt + 1));
+	return (arr);
 }
 
 char	*strdup_split(char const *s, size_t len)
@@ -41,18 +43,33 @@ char	*strdup_split(char const *s, size_t len)
 	i = 0;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
-		return (NULL);
+		return (0);
 	while (i < len)
 	{
 		str[i] = s[i];
 		i++;
 	}
+	str[i] = 0;
 	return (str);
+}
+
+void	*free_all(char **str, size_t l)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] && i <= l)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (NULL);
 }
 
 size_t	strlen_split(char const *s, char c)
 {
-	size_t	len;
+	size_t		len;
 
 	len = 0;
 	while (s[len] && s[len] != c)
@@ -60,40 +77,30 @@ size_t	strlen_split(char const *s, char c)
 	return (len);
 }
 
-char	**errorhandler(void)
-{
-	char	**arr;
-
-	arr = (char **)malloc(sizeof(char *));
-	if (!arr)
-		return (NULL);
-	arr[0] = 0;
-	return (arr);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	size_t		str_num;
 	size_t		i;
 	size_t		len;
 	char		**arr;
 
-	if (!s || *s == '\0')
-		return (errorhandler());
 	i = 0;
 	len = 0;
-	str_num = count_strs(s, c);
-	arr = (char **)malloc(sizeof(char *) * (str_num + 1));
-	if (arr == NULL)
-		return (NULL);
-	while (i < str_num)
+	arr = ft_malloc_arr((char *)s, c);
+	if (!arr)
+		return (0);
+	while (*s)
 	{
-		while (s[0] == c)
+		if (*s != c)
+		{
+			len = strlen_split(s, c);
+			arr[i] = strdup_split(s, len);
+			s += len;
+			len = 0;
+			if (!arr[i++])
+				return (free_all(arr, i));
+		}
+		else
 			s++;
-		len = strlen_split(s, c);
-		arr[i] = strdup_split(s, len);
-		s += len;
-		i++;
 	}
 	arr[i] = 0;
 	return (arr);

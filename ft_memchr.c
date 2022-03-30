@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:05:59 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/17 18:00:49 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/30 15:21:36 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (p[i] == cc)
-			return ((unsigned char *)s + i);
+			return ((void *)s + i);
 		i++;
 	}
 	return (0);

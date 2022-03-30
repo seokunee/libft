@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 16:41:25 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/17 18:03:42 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:02:18 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*rs;
-	char	cc;
-	size_t	i;
+	const char	*rs;
+	char		cc;
+	size_t		i;
 
 	i = 0;
 	cc = (char)c;
+	rs = NULL;
 	while (s[i])
 	{
 		if (s[i] == cc)
-			rs = (char *)(s + i);
+			rs = &s[i];
 		i++;
 	}
-	if (!c)
-		return ((char *)(s + i));
-	return (rs);
+	if (s[i] == cc)
+		rs = &s[i];
+	return ((char *)rs);
 }

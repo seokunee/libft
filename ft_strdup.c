@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 20:44:00 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/21 00:37:00 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/30 18:05:42 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(const char *s)
 	char	*str;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	str = (char *)malloc(sizeof(*s) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
