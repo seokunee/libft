@@ -6,13 +6,13 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 16:26:19 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/17 17:48:16 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/29 16:03:56 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }

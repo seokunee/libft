@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:19:05 by seokhun           #+#    #+#             */
-/*   Updated: 2022/03/21 00:37:13 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/03/29 18:41:34 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	lit_len;
 
 	i = 0;
-	if (!*little)
+	if (!(*little))
 		return ((char *)big);
 	lit_len = ft_strlen(little);
 	while (big[i] && i < len)
