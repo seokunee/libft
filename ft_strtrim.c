@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 21:25:06 by seokhun           #+#    #+#             */
-/*   Updated: 2022/03/23 19:02:01 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/04/04 19:36:27 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	front;
 	size_t	back;
 
+	if (!s1 || !set)
+		return (0);
 	front = 0;
 	back = ft_strlen(s1);
 	while (s1[front] && ft_strchr(set, s1[front]))
