@@ -6,13 +6,13 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 23:22:39 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/30 18:27:40 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:43:18 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_malloc_arr(char *s, char c)
+static char	**ft_malloc_arr(char *s, char c)
 {
 	size_t	cnt;
 	char	**arr;
@@ -35,7 +35,7 @@ char	**ft_malloc_arr(char *s, char c)
 	return (arr);
 }
 
-char	*strdup_split(char const *s, size_t len)
+static char	*strdup_split(char const *s, size_t len)
 {
 	char	*str;
 	size_t	i;
@@ -53,7 +53,7 @@ char	*strdup_split(char const *s, size_t len)
 	return (str);
 }
 
-void	*free_all(char **str, size_t l)
+static void	*free_all(char **str, size_t l)
 {
 	size_t	i;
 
@@ -67,7 +67,7 @@ void	*free_all(char **str, size_t l)
 	return (NULL);
 }
 
-size_t	strlen_split(char const *s, char c)
+static size_t	strlen_split(char const *s, char c)
 {
 	size_t		len;
 

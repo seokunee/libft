@@ -6,13 +6,13 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:09:09 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/21 16:52:19 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:43:41 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_print_number(int n, int fd)
+static void	ft_print_number(int n, int fd)
 {
 	char	left;
 

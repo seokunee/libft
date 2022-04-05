@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 00:36:06 by seokhun           #+#    #+#             */
-/*   Updated: 2022/04/05 12:09:13 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:42:18 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s_len - (size_t)start - 1 > len)
 		sub = (char *)malloc(sizeof(char) * (len + 1));
 	else
-		sub = (char *)malloc(sizeof(char) * (s_len - start));
+		sub = (char *)malloc(sizeof(char) * (s_len - start + 1));
 	if (!sub)
 		return (NULL);
 	while (s[i] && i < len)
