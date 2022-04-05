@@ -6,7 +6,7 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 17:41:39 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/03/30 21:00:36 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/04/05 11:29:15 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*s;
 	unsigned char	*d;
 
-	i = 0;
+	i = -1;
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
 	if (dest == NULL && src == NULL)
 		return (NULL);
 	if (dest < src)
 	{
-		while (i < n)
-		{
+		while (++i < n)
 			d[i] = s[i];
-			i++;
-		}
 	}
 	else
 	{
