@@ -6,11 +6,11 @@
 /*   By: seokchoi <seokchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 15:36:52 by seokchoi          #+#    #+#             */
-/*   Updated: 2022/04/05 13:44:08 by seokchoi         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:45:15 by seokchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	long	result;
 	long	n;
